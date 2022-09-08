@@ -45,19 +45,39 @@ class LinkedList {
 
     }
 
+    delete() {
 
+        if(this.head) {
 
+            // console.log(ll);
 
+            //======================================================================= counting nodes number
+            
+            let base =  this.head;
+            let nodesNumber = 1;
+            while(base.next) {
+                nodesNumber++;
+                base = base.next;
+            }
+            console.log(nodesNumber);
 
+            //======================================================================= finding the center node
 
-
-
-
-
-
-
-
-
+            let center = Math.ceil(nodesNumber/2);
+            // console.log(center);
+            let target = this.head;
+            for( let i=1 ; i<center-1 ; i++) {
+                // console.log(i,'i')
+                target = target.next;
+            }
+            console.log('target',target);
+            console.log(target.next.next);
+            target.next = target.next.next;
+            
+        }else {
+            console.log('the list is empty');
+        }
+    }
 
 }
 
