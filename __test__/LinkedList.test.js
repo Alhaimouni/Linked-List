@@ -15,7 +15,6 @@ describe('LinkedList class testing', () => {
 
 });
 
-
 describe('Testing LinkedList insert method', () => {
 
     it('If linkedList is empty', () => {
@@ -36,11 +35,10 @@ describe('Testing LinkedList insert method', () => {
         linkedList.insert('c');
         expect(linkedList.head.value).toEqual('c');
         expect(linkedList.head.next.value).toEqual('b');
-        
+
     });
 
-})
-
+});
 
 describe('Testing LinkedList append method', () => {
 
@@ -55,7 +53,7 @@ describe('Testing LinkedList append method', () => {
     });
 
     it('If linkedList is not empty', () => {
-        
+
         const linkedList = new LinkedList();
 
         linkedList.append('a');
@@ -67,14 +65,35 @@ describe('Testing LinkedList append method', () => {
 
     });
 
-})
+});
 
-
-describe('Testing LinkedList delete method', () => {
+describe('Testing LinkedList nodesNumber method', () => {
 
     it('If linkedList is empty', () => {
 
+        const linkedList = new LinkedList();
+
+        expect(linkedList.nodesNumber()).toEqual(0);
+
     });
+
+    it('If linkedList is not empty', () => {
+
+        const linkedList = new LinkedList();
+        const ll = new LinkedList();
+
+        linkedList.append('a');
+        linkedList.append('b');
+        linkedList.append('c');
+        ll.append('a');
+
+        expect(ll.nodesNumber()).toEqual(1);
+        expect(linkedList.nodesNumber()).toEqual(3);
+
+    });
+});
+
+describe('Testing LinkedList delete method', () => {
 
     it('If linkedList is not empty', () => {
 
@@ -87,11 +106,10 @@ describe('Testing LinkedList delete method', () => {
         linkedList.append('e');
 
         linkedList.delete();
-        
+
         expect(linkedList.head.value).toEqual('a');
         expect(linkedList.head.next.value).toEqual('b');
         expect(linkedList.head.next.next.value).toEqual('d');
 
     });
-
-})
+});

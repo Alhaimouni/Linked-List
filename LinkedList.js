@@ -45,6 +45,20 @@ class LinkedList {
 
     }
 
+    nodesNumber() {
+        let head = this.head;
+        let num = 1;
+        if (head === null) {
+          return (0);
+        } else {
+          while (head.next) {
+            head = head.next;
+            num++;
+          }
+          return (num);
+        }
+      }
+
     delete() {
 
         if(this.head) {
