@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main","insert","append","delete","insertToSpecificLocation" ]
+    branches: [ "main","insert","append","delete","insertToSpecificLocation","findNodesNumber" ]
   pull_request:
-    branches: [ "main","insert","append","delete","insertToSpecificLocation" ]
+    branches: [ "main","insert","append","delete","insertToSpecificLocation","findNodesNumber" ]
 
 jobs:
   build:
