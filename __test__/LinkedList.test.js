@@ -113,3 +113,26 @@ describe('Testing LinkedList delete method', () => {
 
     });
 });
+
+describe('Testing LinkedList insertAt method', () => {
+
+    it('If linkedList is not empty', () => {
+
+        const linkedList = new LinkedList();
+
+        linkedList.append('a');
+        linkedList.append('b');
+        linkedList.append('c');
+        linkedList.append('d');
+
+        linkedList.insertAt(2,'2');
+
+        expect(linkedList.head.value).toEqual('a');
+        expect(linkedList.head.next.value).toEqual('2');
+        expect(linkedList.head.next.next.value).toEqual('b');
+
+
+
+
+    });
+});
