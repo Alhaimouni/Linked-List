@@ -25,6 +25,36 @@ class LinkedList {
 
     }
 
+    insertAt(place, value) {
+
+        if (place > this.nodesNumber()) {
+          console.log('the place is more than the nodes');
+          return 'the place is more than the nodes'
+        } else {
+          if (this.head) {
+            let i = 1;
+            let target = this.head;
+            while (i < place) {
+              target = target.next;
+              i++;
+            }
+            const node = new Node(value);
+            node.next = target;
+            let newTarget = this.head;
+            let k = 1
+            while (k < place-1) {
+              newTarget = newTarget.next;
+              k++;
+            }
+            newTarget.next = node ;
+    
+          } else {
+            const node = new Node(value);
+            this.head = node;
+          }
+        }
+    }
+
     append(value) {
 
         if (this.head) {
